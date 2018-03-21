@@ -31,7 +31,7 @@
 
 ;; 添加 package
 (defconst lxr-packages
-  '(youdao-dictionary)
+  '(youdao-dictionary vue-mode)
   "The list of Lisp packages required by the lxr layer.
 
 Each entry is either:
@@ -58,6 +58,11 @@ Each entry is either:
 
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
+(defun lxr/init-vue-mode ()
+  (use-package vue-mode
+    :config
+    ;; 0, 1, or 2, representing (respectively) none, low, and high coloring
+    (setq mmm-submode-decoration-level 0)))
 
 (defun lxr/init-youdao-dictionary ()
   (use-package youdao-dictionary
